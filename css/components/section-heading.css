@@ -1,0 +1,71 @@
+.eyebrow,
+.kicker {
+  margin: 0 0 24px;
+  color: var(--acid);
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.eyebrow span {
+  width: 22px;
+  height: 1px;
+  background: currentColor;
+}
+
+.section-heading {
+  margin-bottom: 64px;
+}
+
+.split-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+  align-items: end;
+  gap: 100px;
+}
+
+.section h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(38px, 5vw, 67px);
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  line-height: 1.04;
+}
+
+
+.section-heading > p,
+.split-heading > p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.compact-heading {
+  max-width: 810px;
+}
+
+@media (max-width: 980px) {
+  .split-heading {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+}
+
+@media (max-width: 760px) {
+  .section-heading {
+    margin-bottom: 42px;
+  }
+
+  .section h2 {
+    font-size: clamp(36px, 11vw, 52px);
+  }
+}

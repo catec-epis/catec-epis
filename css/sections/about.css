@@ -1,0 +1,5 @@
+.about {
+  background:
+    radial-gradient(circle at 10% 85%, rgba(var(--blue-rgb), 0.05), transparent 24%),
+    var(--bg);
+}

@@ -1,0 +1,10 @@
+.pill {
+  width: max-content;
+  padding: 5px 9px;
+  color: var(--acid);
+  border: 1px solid rgba(var(--accent-rgb), 0.3);
+  border-radius: 999px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}

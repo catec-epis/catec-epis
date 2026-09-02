@@ -1,0 +1,19 @@
+{
+  "name": "CATEC 2026-II",
+  "short_name": "CATEC",
+  "description": "Evento de capacitación tecnológica de la Escuela Profesional de Ingeniería de Sistemas de la Universidad Privada de Tacna.",
+  "start_url": "/catec-epis/",
+  "scope": "/catec-epis/",
+  "display": "standalone",
+  "background_color": "#020616",
+  "theme_color": "#070b24",
+  "lang": "es-PE",
+  "icons": [
+    {
+      "src": "./logo_catec.png",
+      "sizes": "1114x1485",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

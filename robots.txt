@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://srg-cp.github.io/catec-epis/sitemap.xml

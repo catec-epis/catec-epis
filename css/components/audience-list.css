@@ -1,0 +1,23 @@
+.audience-list {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(var(--ink-rgb), 0.25);
+  list-style: none;
+}
+
+.audience-list li {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 19px 0;
+  border-bottom: 1px solid rgba(var(--ink-rgb), 0.25);
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.audience-list span {
+  color: rgba(var(--ink-rgb), 0.52);
+  font-family: monospace;
+  font-size: 9px;
+}

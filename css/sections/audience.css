@@ -1,0 +1,21 @@
+.audience {
+  color: var(--bg-deep);
+  background: linear-gradient(120deg, var(--acid), var(--cyan));
+}
+
+.audience .kicker {
+  color: rgba(var(--ink-rgb), 0.62);
+}
+
+.audience-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 120px;
+}
+
+@media (max-width: 980px) {
+  .audience-layout {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+}

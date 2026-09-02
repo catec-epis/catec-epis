@@ -1,0 +1,132 @@
+.agenda-preview {
+  display: grid;
+  min-height: 430px;
+  grid-template-columns: 0.85fr 1.15fr;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.agenda-code {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 38px;
+  overflow: hidden;
+  color: var(--bg-deep);
+  background: var(--acid);
+  font-family: var(--font-display);
+}
+
+.agenda-code::before,
+.agenda-code::after {
+  position: absolute;
+  border: 1px solid rgba(var(--ink-rgb), 0.18);
+  border-radius: 50%;
+  content: "";
+}
+
+.agenda-code::before {
+  right: -100px;
+  bottom: -80px;
+  width: 380px;
+  height: 380px;
+}
+
+.agenda-code::after {
+  right: 20px;
+  bottom: 30px;
+  width: 190px;
+  height: 190px;
+}
+
+.agenda-code span {
+  position: relative;
+  z-index: 1;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.agenda-code strong {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(70px, 9vw, 118px);
+  font-weight: 500;
+  letter-spacing: -0.09em;
+  line-height: 0.85;
+}
+
+.agenda-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+  background:
+    linear-gradient(135deg, rgba(var(--blue-rgb), 0.05), transparent 44%),
+    var(--bg-deep);
+}
+
+
+.agenda-copy h3 {
+  margin: 24px 0 15px;
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.agenda-copy p {
+  max-width: 530px;
+  margin: 0;
+  color: var(--muted);
+}
+
+.agenda-copy a {
+  width: max-content;
+  margin-top: 30px;
+  color: var(--acid);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.agenda-copy a span {
+  display: inline-block;
+  margin-left: 8px;
+  transition: transform 180ms ease;
+}
+
+.agenda-copy a:hover span {
+  transform: translateX(5px);
+}
+
+@media (max-width: 980px) {
+  .agenda-preview {
+    grid-template-columns: 1fr;
+  }
+
+  .agenda-code {
+    min-height: 290px;
+  }
+}
+
+@media (max-width: 760px) {
+  .agenda-preview {
+    min-height: 0;
+  }
+
+  .agenda-code {
+    min-height: 240px;
+    padding: 28px;
+  }
+
+  .agenda-copy {
+    padding: 38px 28px;
+  }
+
+  .agenda-copy h3 {
+    font-size: 29px;
+  }
+}

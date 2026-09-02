@@ -1,0 +1,47 @@
+.button {
+  display: inline-flex;
+  min-height: 51px;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 12px 20px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  color: var(--bg-deep);
+  background: var(--acid);
+}
+
+.button-primary:hover,
+.button-primary:focus-visible {
+  background: #7af7e7;
+}
+
+.button-ghost {
+  color: var(--text);
+  border-color: var(--line-strong);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.button-ghost:hover,
+.button-ghost:focus-visible {
+  border-color: rgba(var(--accent-rgb), 0.5);
+  background: rgba(var(--accent-rgb), 0.05);
+}
+
+.button-disabled {
+  position: relative;
+  z-index: 2;
+  cursor: default;
+  opacity: 0.72;
+}

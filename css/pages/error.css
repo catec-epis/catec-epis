@@ -1,0 +1,41 @@
+.error-page {
+  position: relative;
+  display: grid;
+  min-height: 100svh;
+  place-items: center;
+  overflow: hidden;
+  padding: 30px;
+  background: #070b24;
+}
+
+.error-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.18;
+  background-image:
+    linear-gradient(rgba(var(--accent-rgb), 0.14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--accent-rgb), 0.14) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: radial-gradient(circle, black, transparent 70%);
+}
+
+.error-content {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  text-align: center;
+}
+
+.error-content h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(58px, 11vw, 120px);
+  letter-spacing: -0.07em;
+  line-height: 0.9;
+}
+
+.error-content > p:not(.kicker) {
+  max-width: 530px;
+  margin: 30px auto;
+  color: var(--muted);
+}
