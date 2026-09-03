@@ -11,6 +11,7 @@
 @import url("./components/tech-card.css");
 @import url("./components/signal-strip.css");
 @import url("./components/value-card.css");
+@import url("./components/history-carousel.css");
 @import url("./components/status-list.css");
 @import url("./components/agenda-preview.css");
 @import url("./components/badge.css");
@@ -22,6 +23,7 @@
 @import url("./components/footer.css");
 @import url("./sections/hero.css");
 @import url("./sections/about.css");
+@import url("./sections/antecedents.css");
 @import url("./sections/event-status.css");
 @import url("./sections/agenda.css");
 @import url("./sections/speakers.css");

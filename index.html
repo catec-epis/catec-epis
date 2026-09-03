@@ -87,6 +87,15 @@
         <circle cx="12" cy="12" r="9"></circle>
         <path d="M3 12h18M12 3c2.4 2.5 3.7 5.5 3.7 9S14.4 18.5 12 21c-2.4-2.5-3.7-5.5-3.7-9S9.6 5.5 12 3z"></path>
       </symbol>
+      <symbol id="icon-edition" viewBox="0 0 24 24">
+        <path d="M12 2 3 9l9 7 7.36-5.73L21 9l-9-7Zm0 11.47L6.26 9 12 4.53 17.74 9 12 13.47Zm0 5.07-7.37-5.75L3 14.06l9 7 9-7-1.63-1.27L12 18.54Z"></path>
+      </symbol>
+      <symbol id="icon-location" viewBox="0 0 24 24">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"></path>
+      </symbol>
+      <symbol id="icon-calendar" viewBox="0 0 24 24">
+        <path d="M19 4h-1V2h-2v2H8V2H6v2H5a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3Zm1 15a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-8h16v8ZM4 9V7a1 1 0 0 1 1-1h1v2h2V6h8v2h2V6h1a1 1 0 0 1 1 1v2H4Z"></path>
+      </symbol>
     </svg>
 
     <header class="site-header" data-header>
@@ -150,16 +159,25 @@
 
             <dl class="hero-meta" aria-label="Información general de CATEC 2026-II">
               <div>
-                <dt>Edición</dt>
+                <dt title="Edición">
+                  <svg class="hero-meta-icon" aria-hidden="true"><use href="#icon-edition"></use></svg>
+                  <span class="sr-only">Edición</span>
+                </dt>
                 <dd>2026-II</dd>
               </div>
               <div>
-                <dt>Ciudad</dt>
+                <dt title="Ciudad">
+                  <svg class="hero-meta-icon" aria-hidden="true"><use href="#icon-location"></use></svg>
+                  <span class="sr-only">Ciudad</span>
+                </dt>
                 <dd>Tacna, Perú</dd>
               </div>
               <div>
-                <dt>Programa</dt>
-                <dd>Próximamente</dd>
+                <dt title="Programa">
+                  <svg class="hero-meta-icon" aria-hidden="true"><use href="#icon-calendar"></use></svg>
+                  <span class="sr-only">Programa</span>
+                </dt>
+                <dd>15–16 Septiembre</dd>
               </div>
             </dl>
           </div>
@@ -233,20 +251,102 @@
         </div>
       </section>
 
+      <section id="antecedentes" class="section antecedents" aria-labelledby="antecedents-title">
+        <div class="container">
+          <div class="section-heading antecedents-heading">
+            <p class="kicker">02 / Antecedentes</p>
+            <h2 id="antecedents-title">Una historia construida en cada encuentro.</h2>
+            <p>
+              Actividades y ediciones que reunieron a la comunidad alrededor del conocimiento,
+              la programación y las nuevas tecnologías.
+            </p>
+          </div>
+
+          <div
+            class="history-carousel"
+            data-history-carousel
+            role="region"
+            aria-roledescription="carrusel"
+            aria-label="Antecedentes de CATEC"
+          >
+            <div class="history-viewport">
+              <div class="history-track" data-history-track>
+                <article class="history-card" data-history-card aria-label="1 de 3">
+                  <div class="history-media">
+                    <img
+                      src="./images/antecedentes/seminario-internacional.png"
+                      width="2048"
+                      height="873"
+                      alt="Afiche del Seminario Internacional CATEC 2026-I"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="history-content">
+                    <span>2026-I</span>
+                    <h3>Seminario Internacional CATEC</h3>
+                    <p>Del 01 al 05 de junio</p>
+                  </div>
+                </article>
+
+                <article class="history-card" data-history-card aria-label="2 de 3">
+                  <div class="history-media history-media-portrait">
+                    <img
+                      src="./images/antecedentes/programming-contest.png"
+                      width="509"
+                      height="720"
+                      alt="Afiche del VI Programming Contest de CATEC"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="history-content">
+                    <span>Edición VI</span>
+                    <h3>Programming Contest</h3>
+                    <p>Competencia, lógica y talento universitario</p>
+                  </div>
+                </article>
+
+                <article class="history-card history-card-identity" data-history-card aria-label="3 de 3">
+                  <div class="history-media">
+                    <img
+                      src="./logo_catec.png"
+                      width="1114"
+                      height="1485"
+                      alt="Logotipo de CATEC"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="history-content">
+                    <span>Comunidad EPIS</span>
+                    <h3>Conocimiento que conecta</h3>
+                    <p>Una identidad que crece con cada encuentro</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="history-controls">
+              <button type="button" data-history-prev aria-label="Ver antecedente anterior">←</button>
+              <div class="history-dots" data-history-dots aria-label="Seleccionar antecedente"></div>
+              <button type="button" data-history-next aria-label="Ver antecedente siguiente">→</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="section event-status" aria-labelledby="status-title">
         <div class="container status-layout">
           <div>
             <p class="kicker">Información oficial</p>
             <h2 id="status-title">Estamos preparando una nueva edición.</h2>
             <p>
-              La fecha, modalidad, lugar e inscripciones se publicarán aquí apenas queden
+              La modalidad, el lugar y las inscripciones se publicarán aquí apenas queden
               confirmados. Así evitamos difundir información provisional o incorrecta.
             </p>
           </div>
           <dl class="status-list">
             <div>
               <dt>Fecha</dt>
-              <dd><span>16 de septiembre</span><i aria-hidden="true">01</i></dd>
+              <dd><span>15 y 16 de septiembre</span><i aria-hidden="true">01</i></dd>
             </div>
             <div>
               <dt>Modalidad</dt>
@@ -263,7 +363,7 @@
       <section id="agenda" class="section agenda" aria-labelledby="agenda-title">
         <div class="container">
           <div class="section-heading compact-heading">
-            <p class="kicker">02 / Agenda</p>
+            <p class="kicker">03 / Agenda</p>
             <h2 id="agenda-title">Un programa para entender el presente y diseñar el futuro.</h2>
           </div>
 
@@ -289,7 +389,7 @@
         <div class="container">
           <div class="section-heading split-heading speakers-heading">
             <div>
-              <p class="kicker">03 / Ponentes</p>
+              <p class="kicker">04 / Ponentes</p>
               <h2 id="speakers-title">Cinco voces para una jornada de aprendizaje.</h2>
             </div>
             <p>
@@ -509,7 +609,7 @@
       <section class="section audience" aria-labelledby="audience-title">
         <div class="container">
           <div class="section-heading audience-heading">
-            <p class="kicker">04 / Para ti</p>
+            <p class="kicker">05 / Para ti</p>
             <h2 id="audience-title">Si la tecnología despierta tu curiosidad, este espacio es tuyo.</h2>
             <p>
               Una jornada abierta para aprender, compartir ideas y conectar con personas que
@@ -552,7 +652,7 @@
       <section id="patrocinadores" class="section sponsors" aria-labelledby="sponsors-title">
         <div class="container">
           <div class="section-heading sponsors-heading">
-            <p class="kicker">05 / Patrocinadores</p>
+            <p class="kicker">06 / Patrocinadores</p>
             <h2 id="sponsors-title">Aliados que impulsan CATEC.</h2>
             <p>
               Organizaciones que se suman para hacer posible una experiencia de aprendizaje,
@@ -624,7 +724,7 @@
       <section id="preguntas" class="section faq" aria-labelledby="faq-title">
         <div class="container faq-layout">
           <div class="faq-intro">
-            <p class="kicker">06 / Preguntas</p>
+            <p class="kicker">07 / Preguntas</p>
             <h2 id="faq-title">Lo esencial, sin rodeos.</h2>
             <p>Actualizaremos estas respuestas conforme se confirme la información oficial.</p>
           </div>
@@ -638,7 +738,10 @@
             </details>
             <details>
               <summary>¿Cuándo se realizará CATEC 2026-II?<span aria-hidden="true">+</span></summary>
-              <p>CATEC 2026-II se realizará el 16 de septiembre. Publicaremos aquí los horarios definitivos.</p>
+              <p>
+                CATEC 2026-II se realizará el 15 y 16 de septiembre: el Programming Contest
+                será el día 15 y la jornada de ponencias, el día 16.
+              </p>
             </details>
             <details>
               <summary>¿Cómo podré inscribirme?<span aria-hidden="true">+</span></summary>
@@ -710,5 +813,6 @@
     <script src="./js/modules/mobile-menu.js" defer></script>
     <script src="./js/modules/faq.js" defer></script>
     <script src="./js/modules/sponsor-marquee.js" defer></script>
+    <script src="./js/modules/history-carousel.js" defer></script>
   </body>
 </html>

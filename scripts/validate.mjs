@@ -15,6 +15,7 @@ const cssFiles = [
   "css/components/tech-card.css",
   "css/components/signal-strip.css",
   "css/components/value-card.css",
+  "css/components/history-carousel.css",
   "css/components/status-list.css",
   "css/components/agenda-preview.css",
   "css/components/badge.css",
@@ -26,6 +27,7 @@ const cssFiles = [
   "css/components/footer.css",
   "css/sections/hero.css",
   "css/sections/about.css",
+  "css/sections/antecedents.css",
   "css/sections/event-status.css",
   "css/sections/agenda.css",
   "css/sections/speakers.css",
@@ -42,7 +44,8 @@ const jsFiles = [
   "js/modules/faq.js",
   "js/modules/header-scroll.js",
   "js/modules/mobile-menu.js",
-  "js/modules/sponsor-marquee.js"
+  "js/modules/sponsor-marquee.js",
+  "js/modules/history-carousel.js"
 ];
 
 const requiredFiles = [
@@ -54,7 +57,9 @@ const requiredFiles = [
   "sitemap.xml",
   "manifest.webmanifest",
   "fonts/Geist-Variable.woff2",
-  "logo_catec.png"
+  "logo_catec.png",
+  "images/antecedentes/seminario-internacional.png",
+  "images/antecedentes/programming-contest.png"
 ];
 
 const failures = [];
