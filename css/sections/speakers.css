@@ -42,7 +42,7 @@
 
 .speaker-story-header > div:first-child {
   min-width: 0;
-  flex: 1 1 850px;
+  flex: 1 1 980px;
 }
 
 .speaker-story-kicker {
@@ -55,8 +55,8 @@
 }
 
 .speaker-story h2 {
-  max-width: 850px;
-  min-height: 1.9em;
+  max-width: 980px;
+  min-height: 2.15em;
   margin: 0;
   font-family: var(--font-display);
   font-size: clamp(42px, 5vw, 76px);
@@ -68,7 +68,7 @@
 .speaker-story-title-text {
   position: relative;
   display: block;
-  min-height: 1.9em;
+  min-height: 2.15em;
   overflow: hidden;
 }
 

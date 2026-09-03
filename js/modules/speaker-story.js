@@ -31,13 +31,21 @@
     return progress * progress * (3 - 2 * progress);
   }
 
+  function easeOutBack(value) {
+    const progress = clamp(value);
+    const overshoot = 1.35;
+    const shifted = progress - 1;
+
+    return 1 + (overshoot + 1) * shifted ** 3 + overshoot * shifted ** 2;
+  }
+
   function getScatterOffset(characterIndex, phraseIndex, entering) {
     const seed = (characterIndex + 1) * 31 + (phraseIndex + 1) * 47 + (entering ? 19 : 37);
     const horizontalDirection = (characterIndex + phraseIndex) % 2 === 0 ? -1 : 1;
 
     return {
       x: horizontalDirection * (5 + ((seed * 11) % 22)),
-      y: (entering ? 1 : -1) * (370 + ((seed * 13) % 120))
+      y: (entering ? -1 : 1) * (370 + ((seed * 13) % 120))
     };
   }
 
@@ -110,16 +118,19 @@
   }
 
   function animateLayer(layer, progress, entering) {
-    const stagger = 0.44;
+    const stagger = entering ? 0.3 : 0.4;
     layer.glyphs.forEach((glyph, glyphIndex) => {
       const characterProgress = clamp((progress - glyph.order * stagger) / (1 - stagger));
-      const movement = smoothstep(0, 1, characterProgress);
+      const movement = entering
+        ? easeOutBack(characterProgress)
+        : smoothstep(0, 1, characterProgress);
       const offset = entering ? glyph.entering : glyph.leaving;
       const distance = entering ? 1 - movement : movement;
-      const shakeEnvelope = Math.sin(movement * Math.PI);
-      const shakePhase = movement * Math.PI * 3 + glyphIndex * 0.82;
-      const shakeX = Math.sin(shakePhase) * 3.5 * shakeEnvelope;
-      const shakeY = Math.cos(shakePhase) * 6 * shakeEnvelope;
+      const normalizedMovement = clamp(movement);
+      const shakeEnvelope = Math.sin(normalizedMovement * Math.PI);
+      const shakePhase = normalizedMovement * Math.PI * 4.5 + glyphIndex * 1.08;
+      const shakeX = Math.sin(shakePhase) * 5.25 * shakeEnvelope;
+      const shakeY = Math.cos(shakePhase) * 9 * shakeEnvelope;
 
       setGlyphPosition(
         glyph,
@@ -191,7 +202,7 @@
     setActiveCard(activeCardIndex);
 
     const phraseDistance = targetPhrase - renderedPhrase;
-    const phraseStep = elapsed / 1150;
+    const phraseStep = elapsed / 430;
     renderedPhrase += Math.abs(phraseDistance) <= phraseStep
       ? phraseDistance
       : Math.sign(phraseDistance) * phraseStep;
