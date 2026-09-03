@@ -2,7 +2,8 @@ name: Publicar en GitHub Pages
 
 on:
   push:
-    branches: ["main"]
+    tags:
+      - "v*.*.*"
   workflow_dispatch:
 
 permissions:
@@ -11,18 +12,24 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
-  cancel-in-progress: true
+  group: github-pages
+  cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
+    name: Validar y preparar sitio
     runs-on: ubuntu-latest
     steps:
       - name: Descargar repositorio
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Validar estructura y recursos
+        run: node scripts/validate.mjs
 
       - name: Configurar GitHub Pages
         uses: actions/configure-pages@v5
@@ -31,13 +38,23 @@ jobs:
         shell: bash
         run: |
           mkdir -p _site
-          cp index.html styles.css script.js robots.txt sitemap.xml manifest.webmanifest 404.html logo_catec.png .nojekyll _site/
+          cp index.html 404.html robots.txt sitemap.xml manifest.webmanifest .nojekyll _site/
+          cp -R css fonts images js _site/
+          find . -maxdepth 1 -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" \) -exec cp {} _site/ \;
 
-      - name: Subir sitio
-        uses: actions/upload-pages-artifact@v3
+      - name: Subir sitio preparado
+        uses: actions/upload-pages-artifact@v4
         with:
           path: _site
 
-      - name: Publicar
+  deploy:
+    name: Desplegar
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publicar en GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
