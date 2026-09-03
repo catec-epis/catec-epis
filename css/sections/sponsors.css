@@ -1,0 +1,23 @@
+.sponsors {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(var(--violet-rgb), 0.08), transparent 28%),
+    var(--surface);
+}
+
+.sponsors-heading {
+  max-width: 720px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.sponsors-heading > .kicker {
+  color: var(--acid);
+  font-size: 11px;
+}
+
+.sponsors-heading > p:last-child {
+  max-width: 590px;
+  margin: 20px auto 0;
+  color: var(--muted);
+}

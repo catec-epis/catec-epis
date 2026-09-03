@@ -17,13 +17,6 @@
     <link rel="canonical" href="https://srg-cp.github.io/catec-epis/" />
     <link rel="icon" type="image/png" href="./logo_catec.png" />
     <link rel="manifest" href="./manifest.webmanifest" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap"
-    />
-
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_PE" />
     <meta property="og:site_name" content="CATEC EPIS UPT" />
@@ -85,6 +78,17 @@
   <body>
     <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
 
+    <svg class="icon-sprite" aria-hidden="true">
+      <symbol id="icon-linkedin" viewBox="0 0 24 24">
+        <circle cx="4" cy="4" r="2"></circle>
+        <path d="M2 9h4v12H2zM10 9h4v2a5 5 0 0 1 8 4v6h-4v-6a2 2 0 0 0-4 0v6h-4z"></path>
+      </symbol>
+      <symbol id="icon-website" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9"></circle>
+        <path d="M3 12h18M12 3c2.4 2.5 3.7 5.5 3.7 9S14.4 18.5 12 21c-2.4-2.5-3.7-5.5-3.7-9S9.6 5.5 12 3z"></path>
+      </symbol>
+    </svg>
+
     <header class="site-header" data-header>
       <div class="container header-inner">
         <a class="brand" href="#inicio" aria-label="CATEC 2026-II, ir al inicio">
@@ -139,7 +143,7 @@
             <div class="hero-actions">
               <a class="button button-primary" href="#evento">
                 Explorar el evento
-                <span aria-hidden="true">↘</span>
+                <span class="button-icon" aria-hidden="true">↘</span>
               </a>
               <a class="button button-ghost" href="#novedades">Recibir novedades</a>
             </div>
@@ -181,21 +185,27 @@
         </div>
 
         <div class="signal-strip" aria-label="Temas de CATEC">
-          <div>
-            <span>TECNOLOGÍA</span><i>✦</i><span>INNOVACIÓN</span><i>✦</i><span>EMPRENDIMIENTO</span
-            ><i>✦</i><span>COMUNIDAD</span><i>✦</i><span>FUTURO</span>
+          <div class="signal-track">
+            <div class="signal-group">
+              <span>TECNOLOGÍA</span><i>✦</i><span>INNOVACIÓN</span><i>✦</i
+              ><span>EMPRENDIMIENTO</span><i>✦</i><span>COMUNIDAD</span><i>✦</i
+              ><span>FUTURO</span><i>✦</i>
+            </div>
+            <div class="signal-group" aria-hidden="true">
+              <span>TECNOLOGÍA</span><i>✦</i><span>INNOVACIÓN</span><i>✦</i
+              ><span>EMPRENDIMIENTO</span><i>✦</i><span>COMUNIDAD</span><i>✦</i
+              ><span>FUTURO</span><i>✦</i>
+            </div>
           </div>
         </div>
       </section>
 
       <section id="evento" class="section about" aria-labelledby="about-title">
         <div class="container">
-          <div class="section-heading split-heading">
-            <div>
-              <p class="kicker">01 / El evento</p>
-              <h2 id="about-title">Ideas que salen del aula y se conectan con el mundo.</h2>
-            </div>
-            <p>
+          <div class="section-heading about-heading">
+            <p class="kicker">El evento</p>
+            <h2 id="about-title">Ideas que salen del aula y se conectan con el mundo.</h2>
+            <p class="about-description">
               CATEC es un evento académico y tecnológico impulsado por estudiantes de la
               Escuela Profesional de Ingeniería de Sistemas de la Universidad Privada de Tacna.
               Una experiencia para aprender, compartir y acercarnos a las tecnologías que están
@@ -204,20 +214,17 @@
           </div>
 
           <div class="value-grid">
-            <article class="value-card value-card-featured">
-              <span class="card-index">01</span>
+            <article class="value-card">
               <div class="card-icon" aria-hidden="true">⌁</div>
               <h3>Conocimiento aplicable</h3>
               <p>Experiencias, herramientas y perspectivas que conectan la teoría con retos reales.</p>
             </article>
             <article class="value-card">
-              <span class="card-index">02</span>
               <div class="card-icon" aria-hidden="true">⌘</div>
               <h3>Voces que inspiran</h3>
               <p>Especialistas y profesionales dispuestos a compartir el camino detrás de su trabajo.</p>
             </article>
             <article class="value-card">
-              <span class="card-index">03</span>
               <div class="card-icon" aria-hidden="true">◎</div>
               <h3>Comunidad tecnológica</h3>
               <p>Un espacio para encontrarnos, hacer preguntas y crear nuevas conexiones.</p>
@@ -239,7 +246,7 @@
           <dl class="status-list">
             <div>
               <dt>Fecha</dt>
-              <dd><span>Por confirmar</span><i aria-hidden="true">01</i></dd>
+              <dd><span>16 de septiembre</span><i aria-hidden="true">01</i></dd>
             </div>
             <div>
               <dt>Modalidad</dt>
@@ -283,46 +290,341 @@
           <div class="section-heading split-heading speakers-heading">
             <div>
               <p class="kicker">03 / Ponentes</p>
-              <h2 id="speakers-title">Personas que convierten experiencia en aprendizaje.</h2>
+              <h2 id="speakers-title">Cinco voces para una jornada de aprendizaje.</h2>
             </div>
             <p>
-              Los perfiles de los ponentes se anunciarán después de su confirmación, junto con su
-              trayectoria, organización y tema de participación.
+              Conoce el orden de participación para el 16 de septiembre. Los nombres, temas y
+              horarios definitivos se actualizarán cuando queden confirmados.
             </p>
           </div>
 
-          <div class="speaker-placeholder" aria-label="Ponentes por anunciar">
-            <div class="speaker-silhouette speaker-one"><span>?</span></div>
-            <div class="speaker-silhouette speaker-two"><span>?</span></div>
-            <div class="speaker-message">
-              <span>LINEUP / 2026-II</span>
-              <strong>Próximamente</strong>
-              <p>Sigue nuestras novedades para conocer a quienes nos acompañarán.</p>
-            </div>
-            <div class="speaker-silhouette speaker-three"><span>?</span></div>
+          <div class="schedule-header">
+            <p class="schedule-date">
+              <span>Fecha del evento</span>
+              <strong>16 de septiembre</strong>
+            </p>
+            <p class="schedule-note">Horario referencial</p>
           </div>
+
+          <ol class="speaker-schedule" aria-label="Orden de ponencias del 16 de septiembre">
+            <li class="speaker-slot">
+              <time datetime="2026-09-16T09:00:00-05:00">
+                <span class="speaker-hour">09:00</span>
+                <span class="speaker-meridiem">AM</span>
+              </time>
+              <article class="speaker-card">
+                <img src="./speaker-28.jpeg" width="200" height="200" alt="" loading="lazy" />
+                <div class="speaker-details">
+                  <span class="badge badge-accent">Grado académico por confirmar</span>
+                  <h3>Nombre completo del ponente</h3>
+                  <p class="speaker-topic"><strong>Tema:</strong> Por confirmar</p>
+                  <p class="speaker-description">
+                    La descripción profesional y experiencia del ponente se publicarán próximamente.
+                  </p>
+                  <div class="speaker-socials" aria-label="Redes del ponente">
+                    <span
+                      class="badge badge-social badge-linkedin"
+                      aria-label="LinkedIn próximamente"
+                      aria-disabled="true"
+                      title="LinkedIn próximamente"
+                    >
+                      <svg class="badge-icon" aria-hidden="true">
+                        <use href="#icon-linkedin"></use>
+                      </svg>
+                    </span>
+                    <span
+                      class="badge badge-social badge-website"
+                      aria-label="Sitio web próximamente"
+                      aria-disabled="true"
+                      title="Sitio web próximamente"
+                    >
+                      <svg class="badge-icon" aria-hidden="true">
+                        <use href="#icon-website"></use>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class="speaker-slot">
+              <time datetime="2026-09-16T10:15:00-05:00">
+                <span class="speaker-hour">10:15</span>
+                <span class="speaker-meridiem">AM</span>
+              </time>
+              <article class="speaker-card">
+                <img src="./p4.jpg" width="414" height="529" alt="" loading="lazy" />
+                <div class="speaker-details">
+                  <span class="badge badge-accent">Grado académico por confirmar</span>
+                  <h3>Nombre completo del ponente</h3>
+                  <p class="speaker-topic"><strong>Tema:</strong> Por confirmar</p>
+                  <p class="speaker-description">
+                    La descripción profesional y experiencia del ponente se publicarán próximamente.
+                  </p>
+                  <div class="speaker-socials" aria-label="Redes del ponente">
+                    <span
+                      class="badge badge-social badge-linkedin"
+                      aria-label="LinkedIn próximamente"
+                      aria-disabled="true"
+                      title="LinkedIn próximamente"
+                    >
+                      <svg class="badge-icon" aria-hidden="true">
+                        <use href="#icon-linkedin"></use>
+                      </svg>
+                    </span>
+                    <span
+                      class="badge badge-social badge-website"
+                      aria-label="Sitio web próximamente"
+                      aria-disabled="true"
+                      title="Sitio web próximamente"
+                    >
+                      <svg class="badge-icon" aria-hidden="true">
+                        <use href="#icon-website"></use>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class="speaker-slot">
+              <time datetime="2026-09-16T11:30:00-05:00">
+                <span class="speaker-hour">11:30</span>
+                <span class="speaker-meridiem">AM</span>
+              </time>
+              <article class="speaker-card">
+                <img src="./p4.jpg" width="414" height="529" alt="" loading="lazy" />
+                <div class="speaker-details">
+                  <span class="badge badge-accent">Grado académico por confirmar</span>
+                  <h3>Nombre completo del ponente</h3>
+                  <p class="speaker-topic"><strong>Tema:</strong> Por confirmar</p>
+                  <p class="speaker-description">
+                    La descripción profesional y experiencia del ponente se publicarán próximamente.
+                  </p>
+                  <div class="speaker-socials" aria-label="Redes del ponente">
+                    <span
+                      class="badge badge-social badge-linkedin"
+                      aria-label="LinkedIn próximamente"
+                      aria-disabled="true"
+                      title="LinkedIn próximamente"
+                    >
+                      <svg class="badge-icon" aria-hidden="true">
+                        <use href="#icon-linkedin"></use>
+                      </svg>
+                    </span>
+                    <span
+                      class="badge badge-social badge-website"
+                      aria-label="Sitio web próximamente"
+                      aria-disabled="true"
+                      title="Sitio web próximamente"
+                    >
+                      <svg class="badge-icon" aria-hidden="true">
+                        <use href="#icon-website"></use>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class="speaker-slot">
+              <time datetime="2026-09-16T14:30:00-05:00">
+                <span class="speaker-hour">02:30</span>
+                <span class="speaker-meridiem">PM</span>
+              </time>
+              <article class="speaker-card">
+                <img src="./p4.jpg" width="414" height="529" alt="" loading="lazy" />
+                <div class="speaker-details">
+                  <span class="badge badge-accent">Grado académico por confirmar</span>
+                  <h3>Nombre completo del ponente</h3>
+                  <p class="speaker-topic"><strong>Tema:</strong> Por confirmar</p>
+                  <p class="speaker-description">
+                    La descripción profesional y experiencia del ponente se publicarán próximamente.
+                  </p>
+                  <div class="speaker-socials" aria-label="Redes del ponente">
+                    <span
+                      class="badge badge-social badge-linkedin"
+                      aria-label="LinkedIn próximamente"
+                      aria-disabled="true"
+                      title="LinkedIn próximamente"
+                    >
+                      <svg class="badge-icon" aria-hidden="true">
+                        <use href="#icon-linkedin"></use>
+                      </svg>
+                    </span>
+                    <span
+                      class="badge badge-social badge-website"
+                      aria-label="Sitio web próximamente"
+                      aria-disabled="true"
+                      title="Sitio web próximamente"
+                    >
+                      <svg class="badge-icon" aria-hidden="true">
+                        <use href="#icon-website"></use>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li class="speaker-slot">
+              <time datetime="2026-09-16T15:45:00-05:00">
+                <span class="speaker-hour">03:45</span>
+                <span class="speaker-meridiem">PM</span>
+              </time>
+              <article class="speaker-card">
+                <img src="./p4.jpg" width="414" height="529" alt="" loading="lazy" />
+                <div class="speaker-details">
+                  <span class="badge badge-accent">Grado académico por confirmar</span>
+                  <h3>Nombre completo del ponente</h3>
+                  <p class="speaker-topic"><strong>Tema:</strong> Por confirmar</p>
+                  <p class="speaker-description">
+                    La descripción profesional y experiencia del ponente se publicarán próximamente.
+                  </p>
+                  <div class="speaker-socials" aria-label="Redes del ponente">
+                    <span
+                      class="badge badge-social badge-linkedin"
+                      aria-label="LinkedIn próximamente"
+                      aria-disabled="true"
+                      title="LinkedIn próximamente"
+                    >
+                      <svg class="badge-icon" aria-hidden="true">
+                        <use href="#icon-linkedin"></use>
+                      </svg>
+                    </span>
+                    <span
+                      class="badge badge-social badge-website"
+                      aria-label="Sitio web próximamente"
+                      aria-disabled="true"
+                      title="Sitio web próximamente"
+                    >
+                      <svg class="badge-icon" aria-hidden="true">
+                        <use href="#icon-website"></use>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </article>
+            </li>
+          </ol>
         </div>
       </section>
 
       <section class="section audience" aria-labelledby="audience-title">
-        <div class="container audience-layout">
-          <div class="audience-title-wrap">
+        <div class="container">
+          <div class="section-heading audience-heading">
             <p class="kicker">04 / Para ti</p>
             <h2 id="audience-title">Si la tecnología despierta tu curiosidad, este espacio es tuyo.</h2>
+            <p>
+              Una jornada abierta para aprender, compartir ideas y conectar con personas que
+              también quieren construir el futuro desde la tecnología.
+            </p>
           </div>
           <ul class="audience-list">
-            <li><span>01</span> Estudiantes universitarios</li>
-            <li><span>02</span> Profesionales de tecnología</li>
-            <li><span>03</span> Emprendedores e innovadores</li>
-            <li><span>04</span> Comunidad interesada en aprender</li>
+            <li>
+              <span class="audience-icon" aria-hidden="true">⌁</span>
+              <div>
+                <h3>Estudiantes universitarios</h3>
+                <p>Conecta lo aprendido en el aula con experiencias y retos del mundo real.</p>
+              </div>
+            </li>
+            <li>
+              <span class="audience-icon" aria-hidden="true">⌘</span>
+              <div>
+                <h3>Profesionales de tecnología</h3>
+                <p>Comparte perspectivas y descubre nuevas formas de aplicar la tecnología.</p>
+              </div>
+            </li>
+            <li>
+              <span class="audience-icon" aria-hidden="true">✦</span>
+              <div>
+                <h3>Emprendedores e innovadores</h3>
+                <p>Encuentra ideas, referentes y conexiones para impulsar nuevos proyectos.</p>
+              </div>
+            </li>
+            <li>
+              <span class="audience-icon" aria-hidden="true">◎</span>
+              <div>
+                <h3>Comunidad interesada en aprender</h3>
+                <p>Acércate a la tecnología desde un espacio abierto, cercano y colaborativo.</p>
+              </div>
+            </li>
           </ul>
+        </div>
+      </section>
+
+      <section id="patrocinadores" class="section sponsors" aria-labelledby="sponsors-title">
+        <div class="container">
+          <div class="section-heading sponsors-heading">
+            <p class="kicker">05 / Patrocinadores</p>
+            <h2 id="sponsors-title">Aliados que impulsan CATEC.</h2>
+            <p>
+              Organizaciones que se suman para hacer posible una experiencia de aprendizaje,
+              tecnología y comunidad.
+            </p>
+          </div>
+
+          <div class="sponsor-panel">
+            <div class="sponsor-row">
+              <div class="sponsor-track" data-sponsor-track>
+                <div class="sponsor-group">
+                  <article class="sponsor-item">
+                    <img src="./patrocinadores3.png" width="1024" height="1024" alt="" loading="lazy" />
+                    <strong>La Trilogía del Sabor</strong>
+                  </article>
+                  <article class="sponsor-item">
+                    <img src="./patrocinadores4.png" width="1024" height="1024" alt="" loading="lazy" />
+                    <strong>Nutrifit</strong>
+                  </article>
+                  <article class="sponsor-item">
+                    <img src="./patrocinadores9.png" width="1024" height="1024" alt="" loading="lazy" />
+                    <strong>La Pronta Pizza</strong>
+                  </article>
+                </div>
+              </div>
+            </div>
+
+            <div class="sponsor-row sponsor-row-reverse" aria-hidden="true">
+              <div class="sponsor-track" data-sponsor-track>
+                <div class="sponsor-group">
+                  <article class="sponsor-item">
+                    <img src="./patrocinadores9.png" width="1024" height="1024" alt="" loading="lazy" />
+                    <strong>La Pronta Pizza</strong>
+                  </article>
+                  <article class="sponsor-item">
+                    <img src="./patrocinadores3.png" width="1024" height="1024" alt="" loading="lazy" />
+                    <strong>La Trilogía del Sabor</strong>
+                  </article>
+                  <article class="sponsor-item">
+                    <img src="./patrocinadores4.png" width="1024" height="1024" alt="" loading="lazy" />
+                    <strong>Nutrifit</strong>
+                  </article>
+                </div>
+              </div>
+            </div>
+
+            <div class="sponsor-row sponsor-row-slow" aria-hidden="true">
+              <div class="sponsor-track" data-sponsor-track>
+                <div class="sponsor-group">
+                  <article class="sponsor-item">
+                    <img src="./patrocinadores4.png" width="1024" height="1024" alt="" loading="lazy" />
+                    <strong>Nutrifit</strong>
+                  </article>
+                  <article class="sponsor-item">
+                    <img src="./patrocinadores9.png" width="1024" height="1024" alt="" loading="lazy" />
+                    <strong>La Pronta Pizza</strong>
+                  </article>
+                  <article class="sponsor-item">
+                    <img src="./patrocinadores3.png" width="1024" height="1024" alt="" loading="lazy" />
+                    <strong>La Trilogía del Sabor</strong>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       <section id="preguntas" class="section faq" aria-labelledby="faq-title">
         <div class="container faq-layout">
           <div class="faq-intro">
-            <p class="kicker">05 / Preguntas</p>
+            <p class="kicker">06 / Preguntas</p>
             <h2 id="faq-title">Lo esencial, sin rodeos.</h2>
             <p>Actualizaremos estas respuestas conforme se confirme la información oficial.</p>
           </div>
@@ -336,7 +638,7 @@
             </details>
             <details>
               <summary>¿Cuándo se realizará CATEC 2026-II?<span aria-hidden="true">+</span></summary>
-              <p>La fecha oficial será publicada en esta página cuando quede confirmada.</p>
+              <p>CATEC 2026-II se realizará el 16 de septiembre. Publicaremos aquí los horarios definitivos.</p>
             </details>
             <details>
               <summary>¿Cómo podré inscribirme?<span aria-hidden="true">+</span></summary>
@@ -407,5 +709,6 @@
     <script src="./js/modules/header-scroll.js" defer></script>
     <script src="./js/modules/mobile-menu.js" defer></script>
     <script src="./js/modules/faq.js" defer></script>
+    <script src="./js/modules/sponsor-marquee.js" defer></script>
   </body>
 </html>

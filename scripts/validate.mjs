@@ -4,6 +4,7 @@ import { dirname, resolve } from "node:path";
 const cssFiles = [
   "css/main.css",
   "css/settings/tokens.css",
+  "css/base/fonts.css",
   "css/base/reset.css",
   "css/layout/container.css",
   "css/layout/section.css",
@@ -17,7 +18,8 @@ const cssFiles = [
   "css/components/status-list.css",
   "css/components/agenda-preview.css",
   "css/components/badge.css",
-  "css/components/speaker-placeholder.css",
+  "css/components/speaker-schedule.css",
+  "css/components/sponsor-marquee.css",
   "css/components/audience-list.css",
   "css/components/accordion.css",
   "css/components/newsletter-card.css",
@@ -28,6 +30,7 @@ const cssFiles = [
   "css/sections/agenda.css",
   "css/sections/speakers.css",
   "css/sections/audience.css",
+  "css/sections/sponsors.css",
   "css/sections/faq.css",
   "css/sections/newsletter.css",
   "css/utilities/accessibility.css",
@@ -38,7 +41,8 @@ const jsFiles = [
   "js/modules/current-year.js",
   "js/modules/faq.js",
   "js/modules/header-scroll.js",
-  "js/modules/mobile-menu.js"
+  "js/modules/mobile-menu.js",
+  "js/modules/sponsor-marquee.js"
 ];
 
 const requiredFiles = [
@@ -49,6 +53,7 @@ const requiredFiles = [
   "robots.txt",
   "sitemap.xml",
   "manifest.webmanifest",
+  "fonts/Geist-Variable.woff2",
   "logo_catec.png"
 ];
 
