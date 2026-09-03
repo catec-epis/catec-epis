@@ -161,11 +161,15 @@
       : timelineProgress - segmentIndex;
     const outgoingLayer = titleLayers[segmentIndex];
     const incomingLayer = titleLayers[segmentIndex + 1];
+    const incomingDelay = 0.1;
+    const incomingProgress = clamp(
+      (segmentProgress - incomingDelay) / (1 - incomingDelay)
+    );
 
     outgoingLayer.element.style.visibility = "visible";
     incomingLayer.element.style.visibility = "visible";
     animateLayer(outgoingLayer, segmentProgress, false);
-    animateLayer(incomingLayer, segmentProgress, true);
+    animateLayer(incomingLayer, incomingProgress, true);
   }
 
   function setActiveCard(index) {
@@ -183,6 +187,24 @@
     targetPhrase = activeIndex;
   }
 
+  function getCenteredCardIndex(shift) {
+    const viewportCenter = viewport.clientWidth / 2;
+    let closestIndex = 0;
+    let closestDistance = Number.POSITIVE_INFINITY;
+
+    cards.forEach((card, cardIndex) => {
+      const cardCenter = card.offsetLeft + card.offsetWidth / 2 - shift;
+      const distance = Math.abs(cardCenter - viewportCenter);
+
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestIndex = cardIndex;
+      }
+    });
+
+    return closestIndex;
+  }
+
   function update(frameTime) {
     frame = null;
     if (reducedMotion.matches) return;
@@ -198,7 +220,7 @@
     renderedShift += (targetShift - renderedShift) * horizontalEase;
 
     const visualProgress = maximumShift > 0 ? renderedShift / maximumShift : 0;
-    const activeCardIndex = Math.round(visualProgress * (cards.length - 1));
+    const activeCardIndex = getCenteredCardIndex(renderedShift);
     setActiveCard(activeCardIndex);
 
     const phraseDistance = targetPhrase - renderedPhrase;
@@ -243,8 +265,9 @@
     targetShift = maximumShift * clamp(-story.getBoundingClientRect().top /
       Math.max(1, story.offsetHeight - stage.offsetHeight));
     renderedShift = clamp(renderedShift, 0, maximumShift);
-    const breathingRoom = Math.min(window.innerHeight * 0.28, 220);
-    story.style.height = `${stage.offsetHeight + maximumShift + breathingRoom}px`;
+    const breathingRoom = Math.min(window.innerHeight * 0.18, 140);
+    const horizontalScrollDistance = maximumShift * 1.3;
+    story.style.height = `${stage.offsetHeight + horizontalScrollDistance + breathingRoom}px`;
     previousFrameTime = performance.now();
     requestUpdate();
   }

@@ -135,18 +135,21 @@
 }
 
 .speaker-story-track {
+  --story-card-width: clamp(380px, 38vw, 610px);
+  --story-card-half-width: clamp(190px, 19vw, 305px);
+
   display: flex;
   width: max-content;
   height: 100%;
   align-items: stretch;
   gap: clamp(16px, 1.7vw, 30px);
   margin: 0;
-  padding: 0 max(28px, calc((100vw - var(--container)) / 2));
+  padding: 0 max(28px, calc(50vw - var(--story-card-half-width)));
   list-style: none;
 }
 
 .speaker-story-item {
-  width: clamp(380px, 38vw, 610px);
+  width: var(--story-card-width);
   min-height: 410px;
   flex: 0 0 auto;
   opacity: 0.58;
@@ -352,12 +355,14 @@
   }
 
   .speaker-story-track {
+    --story-card-width: min(84vw, 430px);
+    --story-card-half-width: min(42vw, 215px);
+
     gap: 14px;
-    padding-inline: 14px;
+    padding-inline: max(14px, calc(50vw - var(--story-card-half-width)));
   }
 
   .speaker-story-item {
-    width: min(84vw, 430px);
     min-height: 390px;
   }
 
